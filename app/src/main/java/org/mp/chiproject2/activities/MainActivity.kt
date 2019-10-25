@@ -1,7 +1,8 @@
-package org.mp.chiproject2
+package org.mp.chiproject2.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import org.mp.chiproject2.R
 
 class MainActivity : AppCompatActivity() {
 
