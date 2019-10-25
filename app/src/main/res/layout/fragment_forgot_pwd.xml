@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bg_main">
+
+    <TextView
+        android:textColor="@color/white"
+        android:text="FORGOT PASSWORD"
+        android:fontFamily="@font/marko_one"
+        android:textSize="50dp"
+        android:textAlignment="center"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!--Email Field-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="60dp"
+        android:textColorHint="@color/white">
+
+        <EditText
+            android:id="@+id/forgot_edit_email"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:fontFamily="casual"
+            android:backgroundTint="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/forgot_btn_forgot"
+        android:text="Proceed"
+        android:background="@drawable/bg_btn_1"
+        android:textColor="@color/white"
+        android:fontFamily="@font/marko_one"
+        android:textSize="23dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
