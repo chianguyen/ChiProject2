@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@drawable/bg_main">
@@ -101,10 +102,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/reg_btn_reg"
         android:text="REGISTER"
-        android:background="@drawable/bg_btn_1"
+        app:cornerRadius="15dp"
+        android:backgroundTint="@color/blue"
         android:textColor="@color/white"
         android:fontFamily="@font/marko_one"
         android:textSize="23sp"

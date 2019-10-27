@@ -3,4 +3,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_tennant">Tennant</string>
+    <string name="nav_prop">Properties</string>
+    <string name="nav_map">Maps</string>
+    <string name="nav_profile">Profile</string>
 </resources>

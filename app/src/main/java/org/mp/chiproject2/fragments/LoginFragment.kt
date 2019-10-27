@@ -10,7 +10,8 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_login.view.*
 
 import org.mp.chiproject2.R
-import org.mp.chiproject2.activities.MainActivity
+import org.mp.chiproject2.activities.LandingActivityL
+import org.mp.chiproject2.activities.LandingActivityT
 
 /**
  * A simple [Fragment] subclass.
@@ -26,7 +27,7 @@ class LoginFragment : Fragment() {
 
         view.login_btn_login.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
-                var i = Intent(view.context, MainActivity::class.java)
+                var i = Intent(view.context, LandingActivityL::class.java)
                 startActivity(i)
             }
         })

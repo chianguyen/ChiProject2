@@ -1,4 +1,4 @@
-package org.mp.chiproject2.fragments
+package org.mp.chiproject2.myTools
 
 import android.content.Context
 import android.net.Uri
@@ -42,7 +42,7 @@ class BlankFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false)
+        return inflater.inflate(R.layout.fragment_blank2, container, false)
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -60,23 +60,25 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/login_btn_login"
         android:text="Login"
-        android:background="@drawable/bg_btn_1"
         android:textColor="@color/white"
         android:fontFamily="@font/marko_one"
+        android:backgroundTint="@color/blue"
         android:textSize="23sp"
+        app:cornerRadius="15dp"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/login_btn_register"
         android:text="Register?"
-        android:background="@drawable/bg_btn_1"
+        app:cornerRadius="15dp"
+        android:backgroundTint="@color/blue"
         android:textColor="@color/white"
         android:fontFamily="@font/marko_one"
         android:textSize="23sp"
@@ -86,11 +88,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/login_btn_forgot"
         android:text="Forgot password?"
         android:background="#00ffffff"
         android:textColor="@color/white"
+        android:backgroundTint="@color/blue"
+        app:cornerRadius="15dp"
         android:textStyle="italic"
         android:fontFamily="@font/marko_one"
         android:textSize="20sp"

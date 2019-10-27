@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LandingActivityT"
+    android:background="@drawable/bg_pic">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/blue"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PROPERPOTENT"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:fontFamily="@font/marko_one"
+            android:textAlignment="center"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.circularreveal.CircularRevealFrameLayout
+        android:id="@+id/main_frameT"
+        android:layout_width="match_parent"
+        android:layout_height="558dp"
+        android:layout_below="@id/toolbar">
+    </com.google.android.material.circularreveal.CircularRevealFrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navViewT"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:menu="@menu/nav_item_t"
+        android:background="@color/blue"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+
+</RelativeLayout>
