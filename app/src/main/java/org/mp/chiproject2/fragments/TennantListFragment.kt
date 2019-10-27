@@ -33,6 +33,9 @@ class TennantListFragment : Fragment() {
         view.recyclerViewTennant.adapter = TennantAdapter(tennantList, view.context)
 
 
+
+
+
         return view
     }
 
