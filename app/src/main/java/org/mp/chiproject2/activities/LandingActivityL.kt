@@ -21,26 +21,26 @@ class LandingActivityL : AppCompatActivity() {
         when(item.itemId){
 
             R.id.nav_landlord_props -> {
-                openFragment(propFragment)
                 toolbar_title.setText("Properties")
+                openFragment(propFragment)
                 return@OnNavigationItemSelectedListener true
             }
 
             R.id.nav_landlord_tennant -> {
-                openFragment(tennantListFragment)
                 toolbar_title.setText("Tennants")
+                openFragment(tennantListFragment)
                 return@OnNavigationItemSelectedListener true
             }
 
             R.id.nav_landlord_map -> {
-                openFragment(mapFragment)
                 toolbar_title.setText("Maps")
+                openFragment(mapFragment)
                 return@OnNavigationItemSelectedListener true
             }
 
             R.id.nav_landlord_profile -> {
-                openFragment(profileFragment)
                 toolbar_title.setText("Profile")
+                openFragment(profileFragment)
                 return@OnNavigationItemSelectedListener true
             }
 
@@ -56,7 +56,7 @@ class LandingActivityL : AppCompatActivity() {
         val bottomNav : BottomNavigationView = findViewById(R.id.navViewL)
         bottomNav.setOnNavigationItemSelectedListener(onNaviItemSelected)
 
-        var mToolbar: Toolbar = findViewById(R.id.toolbar)
+     /*   var mToolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(mToolbar)
 
         var actionBar = supportActionBar
@@ -69,12 +69,12 @@ class LandingActivityL : AppCompatActivity() {
             override fun onClick(v: View?) {
                 supportFragmentManager.popBackStack()
             }
-        })
+        })*/
 
     }
 
     private fun openFragment(fragment: Fragment){
-        supportFragmentManager.popBackStack()
+        supportFragmentManager!!.popBackStack()
         supportFragmentManager.beginTransaction().replace(R.id.main_frameL, fragment).addToBackStack(null).commit()
     }
 }
