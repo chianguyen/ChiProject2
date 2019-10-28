@@ -14,8 +14,10 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         var lottieAniView : LottieAnimationView = findViewById(R.id.lottieAnimationView2)
+        var lottieAniView2 : LottieAnimationView = findViewById(R.id.lottieAnimationView3)
 
-        lottieAniView.setRepeatCount(2)
+        lottieAniView.setRepeatCount(1)
+        lottieAniView2.setRepeatCount(1)
 
         lottieAniView.addAnimatorListener(object: Animator.AnimatorListener{
             override fun onAnimationRepeat(animation: Animator?) {
@@ -35,6 +37,8 @@ class SplashActivity : AppCompatActivity() {
 
             }
         })
+
+
 
     }
 }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "873832777066",
+    "firebase_url": "https://chiproject2-cadd2.firebaseio.com",
+    "project_id": "chiproject2-cadd2",
+    "storage_bucket": "chiproject2-cadd2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873832777066:android:c6556245986ca1238e1113",
+        "android_client_info": {
+          "package_name": "org.mp.chiproject2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "873832777066-ns728v8coh15u7d2k9qt16bq82bib12h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.mp.chiproject2",
+            "certificate_hash": "cb3b82612432a7527ea461dff51aba52b195ce9c"
+          }
+        },
+        {
+          "client_id": "873832777066-pjulncookggk3fojo0v41srqqti9trfd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVkmtSzLOxOVmAoxKyWHiCKKM5TB3oJwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "873832777066-pjulncookggk3fojo0v41srqqti9trfd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

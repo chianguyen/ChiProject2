@@ -48,7 +48,4 @@
         android:layout_alignParentEnd="true">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-
-
-
 </RelativeLayout>
