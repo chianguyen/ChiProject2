@@ -1,5 +1,7 @@
 package org.mp.chiproject2.activities
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -21,18 +23,21 @@ class LandingActivityT : AppCompatActivity() {
         when(item.itemId){
 
             R.id.nav_tennant_props -> {
-                openFragment(propFragment)
+                supportFragmentManager!!.popBackStack()
                 toolbar_title.setText("Properties")
+                openFragment(propFragment)
                 return@OnNavigationItemSelectedListener true
             }
 
             R.id.nav_tennant_map -> {
+                supportFragmentManager!!.popBackStack()
                 openFragment(mapFragment)
                 toolbar_title.setText("Maps")
                 return@OnNavigationItemSelectedListener true
             }
 
             R.id.nav_tennant_profile -> {
+                supportFragmentManager!!.popBackStack()
                 openFragment(profileFragment)
                 toolbar_title.setText("Profiles")
                 return@OnNavigationItemSelectedListener true
@@ -45,32 +50,25 @@ class LandingActivityT : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_landing_l)
+        setContentView(R.layout.activity_landing_t)
 
         val bottomNav : BottomNavigationView = findViewById(R.id.navViewT)
         bottomNav.setOnNavigationItemSelectedListener(onNaviItemSelected)
 
-        supportFragmentManager.beginTransaction().replace(R.id.main_frameT, PropertyListT()).commit()
+        var sp: SharedPreferences = this.getSharedPreferences("chamber", Context.MODE_PRIVATE)
 
-        var mToolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(mToolbar)
-
-        var actionBar = supportActionBar
-        actionBar!!.setDisplayHomeAsUpEnabled(true)
-        actionBar!!.setDisplayShowHomeEnabled(true)
-
-
-        mToolbar.setNavigationOnClickListener(object: View.OnClickListener{
-            override fun onClick(v: View?) {
-                supportFragmentManager.popBackStack()
-            }
-        })
+        toolbar_title.setText("Properties")
+        supportFragmentManager.beginTransaction().replace(R.id.main_frameT, PropertyListFragment()).commit()
 
     }
 
     private fun openFragment(fragment: Fragment){
-        supportFragmentManager.popBackStack()
+//        supportFragmentManager.popBackStack()
         supportFragmentManager.beginTransaction().replace(R.id.main_frameT, fragment).addToBackStack(null).commit()
+    }
+
+    override fun onBackPressed() {
+        //super.onBackPressed()
     }
 
 }

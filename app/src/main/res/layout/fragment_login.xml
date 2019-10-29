@@ -11,10 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:fontFamily="casual"
-        android:text="LOGIN"
+        android:text="PROPERTITAN"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="70dp"
+        android:textSize="50dp"
         app:fontFamily="@font/marko_one" />
 
     <!--Email Field-->
@@ -33,6 +33,8 @@
             android:textColor="@color/white"
             android:fontFamily="casual"
             android:backgroundTint="@color/white"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -55,6 +57,7 @@
             android:textColor="@color/white"
             android:fontFamily="casual"
             android:backgroundTint="@color/white"
+            android:maxLines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -65,11 +68,13 @@
         android:text="Login"
         android:textColor="@color/white"
         android:fontFamily="@font/marko_one"
-        android:backgroundTint="@color/blue"
-        android:textSize="23sp"
-        app:cornerRadius="15dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
+        app:backgroundTint="@color/deep_red"
+        android:textSize="14sp"
+        app:cornerRadius="10dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/white"
+        android:layout_marginLeft="140dp"
+        android:layout_marginRight="140dp"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -77,29 +82,32 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/login_btn_register"
         android:text="Register?"
-        app:cornerRadius="15dp"
-        android:backgroundTint="@color/blue"
+        app:cornerRadius="10dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/white"
+        app:backgroundTint="@color/deep_red"
         android:textColor="@color/white"
         android:fontFamily="@font/marko_one"
-        android:textSize="23sp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/login_btn_forgot"
         android:text="Forgot password?"
-        android:background="#00ffffff"
         android:textColor="@color/white"
-        android:backgroundTint="@color/blue"
-        app:cornerRadius="15dp"
+        app:backgroundTint="@color/deep_red"
+        app:cornerRadius="10dp"
         android:textStyle="italic"
         android:fontFamily="@font/marko_one"
-        android:textSize="20sp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp"
+        android:textSize="14sp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

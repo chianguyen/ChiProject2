@@ -18,15 +18,31 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_logout"
         android:text="LOGOUT"
+        app:cornerRadius="10dp"
+        app:backgroundTint="@color/blue"
+        android:textColor="@color/white"
+        android:fontFamily="@font/marko_one"
+        android:textSize="14sp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+<!--    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_emergency_call"
+        android:text="EMERGENCY CALL"
         app:cornerRadius="15dp"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="#B60202"
         android:textColor="@color/white"
         android:fontFamily="@font/marko_one"
         android:textSize="23sp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginRight="120dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"/>-->
 
 </LinearLayout>

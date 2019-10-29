@@ -2,6 +2,7 @@ package org.mp.chiproject2.fragments
 
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -30,7 +31,12 @@ class ProfileFragment : Fragment() {
         }
 
 
-
+/*
+        view.btn_emergency_call.setOnClickListener{
+            var emergency = Intent(Intent.ACTION_CALL, Uri.parse("911"))
+            startActivity(emergency)
+        }
+*/
 
 
         return view

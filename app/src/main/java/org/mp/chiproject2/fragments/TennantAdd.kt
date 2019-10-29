@@ -12,14 +12,14 @@ import org.mp.chiproject2.R
 /**
  * A simple [Fragment] subclass.
  */
-class LandingBaseFragment : Fragment() {
+class TennantAdd : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_landing_base, container, false)
+        return inflater.inflate(R.layout.fragment_tennant_add, container, false)
     }
 
 

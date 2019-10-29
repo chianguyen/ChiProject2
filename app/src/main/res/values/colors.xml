@@ -7,5 +7,7 @@
     <color name="blue">#013768</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+<!--    <color name="deep_red">#8B0202</color>-->
+    <color name="deep_red">#013768</color>
 
 </resources>

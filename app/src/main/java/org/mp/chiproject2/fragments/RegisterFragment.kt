@@ -2,15 +2,22 @@ package org.mp.chiproject2.fragments
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.fragment_register.view.*
+import okhttp3.ResponseBody
 
 import org.mp.chiproject2.R
+import org.mp.chiproject2.network.ApiClient
+import org.mp.chiproject2.network.ApiInterface
+import retrofit2.Call
+import retrofit2.Response
 
 /**
  * A simple [Fragment] subclass.
@@ -48,10 +55,11 @@ class RegisterFragment : Fragment() {
                         } else {
                             reg_edit_pwd.setError(null)
 
-                            if (acctype == "tennant" || acctype == "landlord") {
+                            if (acctype == "tenant" || acctype == "landlord") {
                                 reg_edit_account_type.setError(null)
-                                fragmentManager!!.beginTransaction()
-                                    .replace(R.id.login_act, LoginFragment()).commit()
+
+                                userRegister(email, lemail, password, acctype)
+
                             } else {
                                 reg_edit_account_type.setError("Enter valid account type")
                             }
@@ -63,6 +71,25 @@ class RegisterFragment : Fragment() {
         })
 
         return view
+    }
+
+    fun userRegister(email: String, lemail: String, password: String, acctype: String) {
+        var apiInterface: ApiInterface = ApiClient().onRetrofitCreate()!!.create(ApiInterface::class.java)
+        var userCall = apiInterface.userReg(email, lemail, password, acctype)
+
+        userCall.enqueue(object : retrofit2.Callback<ResponseBody>{
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                Log.e("REG FAILURE", t.message.toString())
+                Toast.makeText(view!!.context, "Register Failed", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                Log.i("REG RESPONSE", response.body()!!.string())
+                Toast.makeText(view!!.context, response.body()!!.string(), Toast.LENGTH_SHORT).show()
+                fragmentManager!!.beginTransaction().replace(R.id.login_act, LoginFragment()).addToBackStack(null).commit()
+            }
+        })
+
     }
 
 
