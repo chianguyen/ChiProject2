@@ -1,14 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.PropertyAdd">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".views.fragments.PropertyAdd"
+    android:background="@color/blue">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:src="@drawable/house_symbol"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:hint="Address"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="20dp"
+        android:textColorHint="@color/white">
 
-</FrameLayout>
+        <EditText
+            android:id="@+id/property_add_address"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:fontFamily="casual"
+            android:backgroundTint="@color/white"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="City"
+            android:layout_weight="1"
+            android:textColorHint="@color/white">
+
+            <EditText
+                android:id="@+id/property_add_city"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:fontFamily="casual"
+                android:backgroundTint="@color/white"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="State"
+            android:layout_weight="1"
+            android:textColorHint="@color/white">
+
+            <EditText
+
+                android:id="@+id/property_add_state"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:fontFamily="casual"
+                android:backgroundTint="@color/white"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Country"
+            android:layout_weight="1"
+            android:textColorHint="@color/white">
+
+            <EditText
+                android:id="@+id/property_add_country"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:fontFamily="casual"
+                android:backgroundTint="@color/white"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pro Status"
+            android:layout_weight="1"
+            android:textColorHint="@color/white">
+
+            <EditText
+                android:id="@+id/property_add_prostatus"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:fontFamily="casual"
+                android:backgroundTint="@color/white"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mortage Info"
+            android:layout_weight="1"
+            android:textColorHint="@color/white">
+
+            <EditText
+                android:id="@+id/property_add_mortageinfo"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:fontFamily="casual"
+                android:backgroundTint="@color/white"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:textColorHint="@color/white">
+
+        <EditText
+            android:id="@+id/property_add_price"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:fontFamily="casual"
+            android:backgroundTint="@color/white"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Latitude"
+            android:layout_weight="1"
+            android:textColorHint="@color/white">
+
+            <EditText
+                android:id="@+id/property_add_latitude"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:fontFamily="casual"
+                android:backgroundTint="@color/white"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Longitutde"
+            android:layout_weight="1"
+            android:textColorHint="@color/white">
+
+            <EditText
+                android:id="@+id/property_add_longitude"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:fontFamily="casual"
+                android:backgroundTint="@color/white"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_prop_add"
+        android:text="Add"
+        app:cornerRadius="10dp"
+        app:backgroundTint="@color/red"
+        android:textColor="@color/white"
+        android:fontFamily="@font/marko_one"
+        android:textSize="14sp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

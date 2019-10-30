@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.LandingActivityL"
-    android:background="@drawable/bg_pic">
+    tools:context=".views.activities.LandingActivityL"
+    android:background="@color/white">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -26,12 +26,12 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <com.google.android.material.circularreveal.CircularRevealFrameLayout
+    <FrameLayout
         android:id="@+id/main_frameL"
         android:layout_width="match_parent"
         android:layout_height="558dp"
         android:layout_below="@id/toolbar">
-    </com.google.android.material.circularreveal.CircularRevealFrameLayout>
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navViewL"

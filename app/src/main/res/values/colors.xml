@@ -9,5 +9,7 @@
     <color name="black">#000000</color>
 <!--    <color name="deep_red">#8B0202</color>-->
     <color name="deep_red">#013768</color>
+    <color name="logout">#013768</color>
+    <color name="red">#C50101</color>
 
 </resources>
