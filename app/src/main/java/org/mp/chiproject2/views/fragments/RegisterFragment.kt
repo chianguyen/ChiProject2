@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.fragment_register.view.*
 import okhttp3.ResponseBody
@@ -30,42 +31,57 @@ class RegisterFragment : Fragment() {
         // Inflate the layout for this fragment
         var view =  inflater.inflate(R.layout.fragment_register, container, false)
 
+        view.btn_terms.setOnClickListener(object :View.OnClickListener{
+            override fun onClick(v: View?) {
+                fragmentManager!!.beginTransaction().replace(R.id.login_act, Terms()).addToBackStack(null).commit()
+            }
+        })
+
+        view.btn_back_to_login.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(v: View?) {
+                fragmentManager!!.popBackStack()
+            }
+        })
+
         view.reg_btn_reg.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
 
                 var email = reg_edit_email.text.toString()
-                var lemail = reg_edit_landlord_email.text.toString()
+                var lemail = "x"
                 var password = reg_edit_pwd.text.toString()
-                var acctype = reg_edit_account_type.text.toString()
+                var acctype = ""
 
+                //validates email
                 if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                     reg_edit_email.setError("Enter valid email")
                 }
                 else {
                     reg_edit_email.setError(null)
-
-                    if (!android.util.Patterns.EMAIL_ADDRESS.matcher(lemail).matches()) {
-                        reg_edit_landlord_email.setError("Enter valid landlord email")
-                    } else {
-                        reg_edit_landlord_email.setError(null)
-
+                        //then validates password
                         if (password.isEmpty()) {
                             reg_edit_pwd.setError("Enter password")
                         } else {
                             reg_edit_pwd.setError(null)
 
-                            if (acctype == "tenant" || acctype == "landlord") {
-                                reg_edit_account_type.setError(null)
+                                if(view.reg_checkbox.isChecked){
 
-                                userRegister(email, lemail, password, acctype)
+                                    if(radio_landlord.isChecked) {
+                                        acctype = "landlord"
+                                    }
+                                    else
+                                        acctype = "tenant"
 
-                            } else {
-                                reg_edit_account_type.setError("Enter valid account type")
-                            }
+                                    userRegister(email, lemail, password, acctype)
+                                    Log.i("ACCTYPE", acctype)
+                                    Toast.makeText(view.context, "Registration successful!", Toast.LENGTH_SHORT).show()
+
+                                } else{
+                                    Toast.makeText(view.context, "You have to agree with out terms to register", Toast.LENGTH_LONG).show()
+                                }
+
                         }
-                    }
-                }
 
+                }
             }
         })
 
@@ -84,7 +100,7 @@ class RegisterFragment : Fragment() {
 
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 Log.i("REG RESPONSE", response.body()!!.string())
-                Toast.makeText(view!!.context, response.body()!!.string(), Toast.LENGTH_SHORT).show()
+                Toast.makeText(view!!.context, "Registration Succcessful!", Toast.LENGTH_SHORT).show()
                 fragmentManager!!.beginTransaction().replace(R.id.login_act, LoginFragment()).addToBackStack(null).commit()
             }
         })

@@ -23,7 +23,7 @@
         android:hint="Email"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:textColorHint="@color/white">
 
         <EditText
@@ -31,6 +31,7 @@
             android:textSize="20sp"
             android:textColor="@color/white"
             android:fontFamily="casual"
+            android:singleLine="true"
             android:backgroundTint="@color/white"
             android:inputType="textEmailAddress"
             android:maxLines="1"
@@ -41,7 +42,7 @@
 
 
     <!--Landlord Email Field-->
-    <com.google.android.material.textfield.TextInputLayout
+<!--    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Landlord Email"
@@ -49,18 +50,18 @@
         android:layout_marginRight="60dp"
         android:layout_marginTop="10dp"
         android:textColorHint="@color/white">
-
         <EditText
             android:id="@+id/reg_edit_landlord_email"
             android:textSize="20sp"
             android:textColor="@color/white"
             android:fontFamily="casual"
+            android:singleLine="true"
             android:backgroundTint="@color/white"
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-    </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>-->
 
 
     <!--Password Field-->
@@ -70,7 +71,7 @@
         android:hint="Password"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:textColorHint="@color/white">
 
         <EditText
@@ -78,6 +79,7 @@
             android:textSize="20sp"
             android:textColor="@color/white"
             android:fontFamily="casual"
+            android:singleLine="true"
             android:backgroundTint="@color/white"
             android:maxLines="1"
             android:layout_width="match_parent"
@@ -85,7 +87,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <!--Account type Field-->
+<!--    &lt;!&ndash;Account type Field&ndash;&gt;
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -100,30 +102,105 @@
             android:textSize="20sp"
             android:textColor="@color/white"
             android:fontFamily="casual"
+            android:singleLine="true"
             android:backgroundTint="@color/white"
             android:inputType="text"
             android:maxLines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>-->
 
+    <RadioGroup
+        android:layout_gravity="center"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radio_tenant"
+            android:layout_weight="1"
+            android:text="Register as tenant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RadioButton
+            android:id="@+id/radio_landlord"
+            android:layout_weight="1"
+            android:text="Register as landlord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/reg_checkbox"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:text="I have read and agree with Terms of Service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/reg_btn_reg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="140dp"
+        android:fontFamily="@font/marko_one"
         android:text="REGISTER"
-        app:cornerRadius="10dp"
-        app:backgroundTint="@color/deep_red"
         android:textColor="@color/white"
+        android:textSize="14sp"
+        app:backgroundTint="@color/deep_red"
+        app:cornerRadius="10dp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp"/>
+
+
+    <LinearLayout
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_weight="1"
+        android:id="@+id/btn_back_to_login"
+        android:text="Back to Login"
+        app:cornerRadius="10dp"
+        app:backgroundTint="#00122334"
+        android:textColor="@color/white"
+        android:textStyle="italic"
         android:fontFamily="@font/marko_one"
         android:textSize="14sp"
-        app:strokeColor="@color/white"
         app:strokeWidth="1dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginRight="140dp"
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
+        android:layout_marginTop="26dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_weight="1"
+        android:id="@+id/btn_terms"
+        android:text="Terms of Service"
+        app:cornerRadius="10dp"
+        app:backgroundTint="#00122334"
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:fontFamily="@font/marko_one"
+        android:textSize="14sp"
+        app:strokeWidth="1dp"
+        android:layout_marginTop="26dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
+
 
 
 </LinearLayout>

@@ -35,6 +35,7 @@
             android:backgroundTint="@color/white"
             android:inputType="textEmailAddress"
             android:maxLines="1"
+            android:singleLine="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -56,12 +57,22 @@
             android:textSize="20sp"
             android:textColor="@color/white"
             android:fontFamily="casual"
+            android:singleLine="true"
             android:backgroundTint="@color/white"
             android:maxLines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/login_checkbox"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="55dp"
+        android:layout_gravity="left"
+        android:text="Remember Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/login_btn_login"
@@ -75,42 +86,35 @@
         app:strokeColor="@color/white"
         android:layout_marginLeft="140dp"
         android:layout_marginRight="140dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/login_btn_register"
-        android:text="Register?"
-        app:cornerRadius="10dp"
-        app:strokeWidth="1dp"
-        app:strokeColor="@color/white"
-        app:backgroundTint="@color/deep_red"
+        android:id="@+id/text_register"
+        android:text="Don't have an account? \nRegister now!"
         android:textColor="@color/white"
         android:fontFamily="@font/marko_one"
+        app:backgroundTint="#00ffffff"
         android:textSize="14sp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginRight="140dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+
+
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/login_btn_forgot"
-        android:text="Forgot password?"
+        android:id="@+id/text_forgot"
+        android:text="I forgot my password"
         android:textColor="@color/white"
-        app:backgroundTint="@color/deep_red"
-        app:cornerRadius="10dp"
-        android:textStyle="italic"
         android:fontFamily="@font/marko_one"
-        app:strokeColor="@color/white"
-        app:strokeWidth="1dp"
+        app:backgroundTint="#00ffffff"
         android:textSize="14sp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
 
 
 </LinearLayout>

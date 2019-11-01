@@ -1,6 +1,7 @@
 package org.mp.chiproject2.network
 
 import com.google.gson.JsonObject
+import okhttp3.Response
 import okhttp3.ResponseBody
 import org.mp.chiproject2.models.PropertyLList
 import org.mp.chiproject2.models.PropertyTList
@@ -34,8 +35,14 @@ interface ApiInterface {
     @GET("pro_mgt_property_all.php")
     fun showPropertyTList(): retrofit2.Call<PropertyTList>
 
+    @GET("pro_mgt_property_all.php")
+    fun propertyForMap(@Query("userid") userId: String,
+                       @Query("usertype") userType: String): retrofit2.Call<PropertyLList>
+
+
     @GET("pro_mgt_tenent_details.php")
     fun showTennantList(@Query("landlordid") landlordid: String): retrofit2.Call<TenantList>
+
 
     @GET("pro_mgt_add_pro.php")
     fun addProperty(@Query("address") address: String,
@@ -50,13 +57,20 @@ interface ApiInterface {
                     @Query("latitude") latitude: String,
                     @Query("longitude") longitude: String): retrofit2.Call<ResponseBody>
 
+
     @GET("remove-property.php")
     fun rmvProperty(@Query("propertyid") propertyID: String): retrofit2.Call<ResponseBody>
+
 
     @GET("pro_mgt_add_tenants.php")
     fun addTenant(@Query("name") name: String,
                   @Query("email") email: String,
-                  )
+                  @Query("address") address: String,
+                  @Query("mobile") mobile: String,
+                  @Query("propertyid")  propertyid: String,
+                  @Query("landlordid") landlordid: String): retrofit2.Call<ResponseBody>
+
+
 
 
 

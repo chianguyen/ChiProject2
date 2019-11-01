@@ -21,6 +21,7 @@ import org.mp.chiproject2.views.activities.LandingActivityT
 import org.mp.chiproject2.network.ApiClient
 import org.mp.chiproject2.network.ApiInterface
 import org.mp.chiproject2.tools.SharedPrefrecencesMaster
+import org.mp.chiproject2.views.activities.ForgotPwdAct
 import retrofit2.Call
 import retrofit2.Response
 
@@ -36,14 +37,20 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_login, container, false)
 
-        var sp: SharedPreferences = view.context!!.getSharedPreferences("chamber", Context.MODE_PRIVATE)
+        var sp: SharedPreferences    = view.context!!.getSharedPreferences("chamber", Context.MODE_PRIVATE)
+        var s_email = sp.getString("login_key", " ")
+        var s_pwd = sp.getString("login_pwd", " ")
+
+        view.login_edit_email.setText(s_email.toString())
+        view.login_edit_password.setText(s_pwd.toString())
 
         //-------Buttons-----------------------------------------------------------------
         view.login_btn_login.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
 
                 var loginEmail = login_edit_email.text.toString()
-                var loginPwd = login_edit_password.text.toString()
+                var loginPwd   = login_edit_password.text.toString()
+                var editor = sp.edit()
 
 
                 if(loginEmail.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(loginEmail).matches()){
@@ -52,27 +59,33 @@ class LoginFragment : Fragment() {
                 else {
                     login_edit_email.setError(null)
 
+                    if(view.login_checkbox.isChecked){
+                        editor.putString("login_key", loginEmail)
+                        editor.putString("login_pwd", loginPwd)
+                        editor.commit()
+                    }
+
                     //Call login using retrofit
                     userLogin(loginEmail, loginPwd)
 
                 }
-
             }
         })
 
-        view.login_btn_register.setOnClickListener(object: View.OnClickListener{
+        view.text_register.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
-                var regFrag = RegisterFragment()
+                var regFrag    = RegisterFragment()
                 fragmentManager!!.beginTransaction().replace(R.id.login_act, regFrag).addToBackStack(null).commit()
             }
         })
 
-        view.login_btn_forgot.setOnClickListener(object: View.OnClickListener{
+        view.text_forgot.setOnClickListener(object: View.OnClickListener{
             override fun onClick(v: View?) {
-                var forgotFrag = ForgotPwdFragment()
-                fragmentManager!!.beginTransaction().replace(R.id.login_act, forgotFrag).addToBackStack(null).commit()
+                var i = Intent(view!!.context, ForgotPwdAct::class.java)
+                startActivity(i)
             }
         })
+
 
         return view
     }
@@ -102,16 +115,15 @@ class LoginFragment : Fragment() {
 
                 if(loginMsg == "success"){
 
-                    var userId = userLogin.get("userid")!!.asString
-                    var userType = userLogin.get("usertype")!!.asString
-                    var userEmail = userLogin.get("useremail")!!.asString
-                    var userApikey = userLogin.get("appapikey")!!.asString
+                    var userId      = userLogin.get("userid")!!.asString
+                    var userType    = userLogin.get("usertype")!!.asString
+                    var userEmail   = userLogin.get("useremail")!!.asString
+                    var userApikey  = userLogin.get("appapikey")!!.asString
 
                     Log.i("USER ID", userId)
                     Log.i("USER TYPE", userType)
                     Log.i("USER EMAIL", userEmail)
                     Log.i("USER APIKEY", userApikey)
-
 
                     editor.putString("user_id", userId)
                     editor.putString("user_type", userType)

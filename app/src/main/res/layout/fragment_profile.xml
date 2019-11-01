@@ -1,48 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_main"
     android:orientation="vertical"
-    tools:context=".views.fragments.ProfileFragment"
-    android:background="@drawable/bg_main">
+    tools:context=".views.fragments.ProfileFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/profile_avatar"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="41dp"
         android:src="@drawable/ic_person_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_photo"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="70dp"/>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="57dp"
+        android:fontFamily="@font/marko_one"
+        android:text="Change avatar"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:backgroundTint="#00ffffff"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/marko_one"
+            android:text="ID: "
+            android:textAlignment="viewEnd"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="310dp" />
+
+        <TextView
+            android:id="@+id/profile_userid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/marko_one"
+            android:text="ID"
+            android:textAlignment="viewStart"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="310dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/profile_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/marko_one"
+        android:text="abcxyz@gmail.com"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="99dp"
+        android:fontFamily="@font/marko_one"
         android:text="LOGOUT"
-        app:cornerRadius="10dp"
-        app:backgroundTint="@color/logout"
         android:textColor="@color/white"
-        android:fontFamily="@font/marko_one"
         android:textSize="14sp"
+        app:backgroundTint="@color/logout"
+        app:cornerRadius="10dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/white"
-        app:strokeWidth="1dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginRight="140dp"
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        app:strokeWidth="1dp" />
 
-<!--    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_emergency_call"
-        android:text="EMERGENCY CALL"
-        app:cornerRadius="15dp"
-        android:backgroundTint="#B60202"
-        android:textColor="@color/white"
-        android:fontFamily="@font/marko_one"
-        android:textSize="23sp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>-->
+    <!--    <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_emergency_call"
+            android:text="EMERGENCY CALL"
+            app:cornerRadius="15dp"
+            android:backgroundTint="#B60202"
+            android:textColor="@color/white"
+            android:fontFamily="@font/marko_one"
+            android:textSize="23sp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>-->
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

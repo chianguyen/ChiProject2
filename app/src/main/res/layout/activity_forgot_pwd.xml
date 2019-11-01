@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.activities.ForgotPwdAct"
+    android:background="@drawable/bg_main">
+
+
+    <TextView
+        android:textColor="@color/white"
+        android:text="FORGOT PASSWORD"
+        android:fontFamily="@font/marko_one"
+        android:textSize="50dp"
+        android:textAlignment="center"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!--Email Field-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="60dp"
+        android:textColorHint="@color/white">
+
+        <EditText
+            android:id="@+id/forgot_edit_email"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:fontFamily="casual"
+            android:singleLine="true"
+            android:backgroundTint="@color/white"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/forgot_btn_forgot"
+        android:text="Proceed"
+        app:backgroundTint="@color/deep_red"
+        app:cornerRadius="10dp"
+        android:outlineAmbientShadowColor="@color/white"
+        android:textColor="@color/white"
+        android:fontFamily="@font/marko_one"
+        android:textSize="14sp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginTop="50dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/forgot_btn_login"
+        android:text="Back to Login"
+        app:backgroundTint="#00ffffff"
+        app:cornerRadius="10dp"
+        android:outlineAmbientShadowColor="@color/white"
+        android:textColor="@color/white"
+        android:fontFamily="@font/marko_one"
+        android:textSize="14sp"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

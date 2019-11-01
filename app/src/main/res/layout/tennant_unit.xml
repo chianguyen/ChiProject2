@@ -9,105 +9,81 @@
 
     <LinearLayout
         android:orientation="horizontal"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white">
 
         <ImageView
-            android:src="@drawable/tenant_ic"
+            android:id="@+id/tenant_photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_margin="5dp"
-            android:layout_width="70dp"
-            android:layout_height="70dp"/>
+            android:src="@drawable/tenant_ic"/>
 
         <LinearLayout
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginBottom="10dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:weightSum="2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
                 <TextView
                     android:id="@+id/tenant_list_name"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+
+                    android:fontFamily="@font/adamina"
 
                     android:text="Tenant Name"
-
-                    android:fontFamily="@font/quantico_bold_italic"
                     android:textColor="@color/blue"
-                    android:textSize="15sp"/>
-
-
-                <TextView
-                    android:id="@+id/tenant_list_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:text="ID"
-
-                    android:textAlignment="viewEnd"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/quantico_bold_italic"
-                    android:textColor="@color/blue"
-                    android:textSize="15sp"/>
-
-            </LinearLayout>
+                    android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tenant_list_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:fontFamily="@font/adamina"
 
                 android:text="abc@mail.com"
+                android:textColor="@color/blue"
+                android:textSize="15sp" />
 
-                android:fontFamily="@font/quantico_bold_italic"
+            <TextView
+                android:id="@+id/tenant_list_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:fontFamily="@font/adamina"
+
+                android:text="12302130"
+                android:textAlignment="viewStart"
                 android:textColor="@color/blue"
                 android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tenant_list_address"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:fontFamily="@font/adamina"
 
                 android:text="Tenant Address"
-
-                android:fontFamily="@font/quantico_bold_italic"
                 android:textColor="@color/blue"
-                android:textSize="15sp"/>
-
-            <TextView
-                android:id="@+id/tenant_list_mobile"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text="12302130"
-
-                android:fontFamily="@font/quantico_bold_italic"
-                android:textColor="@color/blue"
-                android:textSize="15sp"/>
+                android:textSize="15sp" />
 
 
             <TextView
                 android:id="@+id/tenant_list_propID"
-
-                android:textSize="15sp"
-                android:textColor="@color/deep_red"
-
-                android:text="Property ID"
-
-                android:fontFamily="@font/quantico_bold_italic"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/adamina"
+                android:text="1223"
+                android:textColor="@color/deep_red"
+                android:textSize="15sp" />
 
         </LinearLayout>
 

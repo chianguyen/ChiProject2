@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.airbnb.lottie.LottieAnimationView
 import org.mp.chiproject2.R
 
@@ -25,6 +26,7 @@ class SplashActivity : AppCompatActivity() {
             }
 
             override fun onAnimationEnd(animation: Animator?) {
+                //To get to the activity when it ends
                 var i = Intent(this@SplashActivity, LoginActivity::class.java)
                 startActivity(i)
             }
@@ -38,6 +40,10 @@ class SplashActivity : AppCompatActivity() {
             }
         })
 
+
+        window.decorView.apply {
+            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        }
 
 
     }

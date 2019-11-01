@@ -1,18 +1,48 @@
 package org.mp.chiproject2.views.fragments
 
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.activity_landing_l.*
+import kotlinx.android.synthetic.main.activity_landing_t.*
+import kotlinx.android.synthetic.main.fragment_tennant_detail.*
+import kotlinx.android.synthetic.main.fragment_tennant_detail.view.*
 
 import org.mp.chiproject2.R
+import org.mp.chiproject2.views.activities.LandingActivityL
 
 /**
  * A simple [Fragment] subclass.
  */
+
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
+private const val ARG_PARAM3 = "param3"
+private const val ARG_PARAM4 = "param4"
+
 class TennantDetail : Fragment() {
+
+    private var param1: String? = null
+    private var param2: String? = null
+    private var param3: String? = null
+    private var param4: String? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)
+            param3 = it.getString(ARG_PARAM3)
+            param4 = it.getString(ARG_PARAM4)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,11 +51,49 @@ class TennantDetail : Fragment() {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_tennant_detail, container, false)
 
+        view.personal_phone.setText("Phone: $param1")
+        view.personal_email.setText("Email: $param2")
+        view.personal_name.setText(param3)
+        Glide.with(view!!.context).load(param4.toString()).into(view.personal_img)
+        Log.i("IMG CONTENT", param4.toString())
 
+        view.tenant_call.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(v: View?) {
+                var iphone = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$param1"))
+                startActivity(iphone)
+            }
+        })
+
+        view.tenant_text.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(v: View?) {
+                var iphone = Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:$param1"))
+                startActivity(iphone)
+            }
+        })
+
+        view.tenant_email.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(v: View?) {
+                var iphone = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:$param2"))
+                startActivity(iphone)
+            }
+        })
 
 
         return view
     }
 
+    companion object {
+
+        @JvmStatic
+        fun newInstance(param1: String, param2: String, param3: String, param4: String) =
+            TennantDetail().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
+                    putString(ARG_PARAM3, param3)
+                    putString(ARG_PARAM4, param4)
+                }
+            }
+    }
 
 }

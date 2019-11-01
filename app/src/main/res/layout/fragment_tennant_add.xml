@@ -1,10 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     tools:context=".views.fragments.TennantAdd">
 
 
+    <ImageView
+        android:src="@drawable/tenant_ic"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-</FrameLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tenant name"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="50dp"
+        android:textColorHint="@color/white">
+
+        <EditText
+            android:id="@+id/tenant_add_name"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:fontFamily="casual"
+            android:singleLine="true"
+            android:backgroundTint="@color/white"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tenant Email"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:textColorHint="@color/white">
+
+        <EditText
+            android:id="@+id/tenant_add_email"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:fontFamily="casual"
+            android:singleLine="true"
+            android:backgroundTint="@color/white"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tenant Address"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:textColorHint="@color/white">
+
+        <EditText
+            android:id="@+id/tenant_add_address"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:fontFamily="casual"
+            android:singleLine="true"
+            android:backgroundTint="@color/white"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tenant Mobile"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:textColorHint="@color/white">
+
+        <EditText
+            android:id="@+id/tenant_add_mobile"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:fontFamily="casual"
+            android:singleLine="true"
+            android:backgroundTint="@color/white"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Assigning to Property ID: "
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:textColorHint="@color/white">
+
+        <EditText
+            android:id="@+id/tenant_add_propID"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:fontFamily="casual"
+            android:singleLine="true"
+            android:backgroundTint="@color/white"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_tenant_add"
+        android:text="Add"
+        app:cornerRadius="10dp"
+        app:backgroundTint="@color/red"
+        android:textColor="@color/white"
+        android:fontFamily="@font/marko_one"
+        android:textSize="14sp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
+
+<!--
+    android:singleLine="true"-->

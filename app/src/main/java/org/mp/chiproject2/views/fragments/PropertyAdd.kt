@@ -3,6 +3,8 @@ package org.mp.chiproject2.views.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.location.Address
+import android.location.Geocoder
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,6 +12,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
+import com.google.android.gms.maps.GoogleMap
 import kotlinx.android.synthetic.main.fragment_property_add.*
 import kotlinx.android.synthetic.main.fragment_property_add.view.*
 import kotlinx.android.synthetic.main.fragment_property_list.view.*
@@ -20,6 +24,7 @@ import org.mp.chiproject2.network.ApiClient
 import org.mp.chiproject2.network.ApiInterface
 import retrofit2.Call
 import retrofit2.Response
+import java.lang.Exception
 
 /**
  * A simple [Fragment] subclass.
@@ -48,13 +53,34 @@ class PropertyAdd : Fragment() {
                 var prostatA = property_add_prostatus.text.toString()
                 var mortageA = property_add_mortageinfo.text.toString()
                 var priceA   = property_add_price.text.toString()
-                var latA     = property_add_latitude.text.toString()
-                var longA    = property_add_longitude.text.toString()
 
                 if (userType != null && userId != null) {
-                    addProperty(addressA, cityA, stateA, countryA, prostatA, priceA, mortageA, userId, userType, latA, longA)
-                }
 
+                    var latitude = ""
+                    var longitude = ""
+                    var geocoderMatches: List<Address>? = null
+
+                    try {
+                        var fullAddress = "$addressA, $cityA, $stateA, $countryA"
+                        geocoderMatches = Geocoder(view.context).getFromLocationName(fullAddress, 1)
+                    }
+                    catch (e: Exception){
+                        Log.e("ERROR", e.toString())
+                    }
+
+                    if (geocoderMatches != null){
+                        latitude = geocoderMatches[0].latitude.toString()
+                        longitude = geocoderMatches[0].longitude.toString()
+
+                        addProperty(addressA, cityA, stateA, countryA, prostatA, priceA, mortageA, userId, userType, latitude, longitude)
+
+                        Log.i("LONGLAT", "lat = $latitude, long = $longitude")
+
+
+
+                    }
+
+                }
 
             }
         })
@@ -79,7 +105,7 @@ class PropertyAdd : Fragment() {
 
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 Log.i("PROP ADD RES", response.body()!!.string())
-                Toast.makeText(view?.context, response.body()!!.string(), Toast.LENGTH_SHORT).show()
+                Toast.makeText(view?.context, "Property added", Toast.LENGTH_SHORT).show()
                 fragmentManager!!.beginTransaction().replace(R.id.main_frameL, PropertyListL()).addToBackStack(null).commit()
             }
         })

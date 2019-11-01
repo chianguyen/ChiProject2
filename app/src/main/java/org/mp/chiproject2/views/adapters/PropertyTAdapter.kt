@@ -4,12 +4,17 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import org.mp.chiproject2.R
 import org.mp.chiproject2.models.PropertyT
+import org.mp.chiproject2.tools.ImgDatabase
 
 class PropertyTAdapter(var propertyTList: List<PropertyT>, val context: Context): RecyclerView.Adapter<PropertyTAdapter.ViewHolder1>() {
+
+    var imgList = ImgDatabase.houseList
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder1 {
         var v = LayoutInflater.from(context).inflate(R.layout.propertyt_unit, parent, false)
@@ -23,11 +28,14 @@ class PropertyTAdapter(var propertyTList: List<PropertyT>, val context: Context)
     override fun onBindViewHolder(holder: ViewHolder1, position: Int) {
         var propData        = propertyTList.get(position)
         holder.txtPropTAddress.text  = propData.propertyaddress
-        holder.txtPropTCity.text     = propData.propertycity
-        holder.txtPropTState.text    = propData.propertystate
-        holder.txtPropTCountry.text  = propData.propertycountry
-        holder.txtPropTPrice.text    = propData.propertypurchaseprice
-        holder.txtPropTID.text       = propData.id
+        holder.txtPropTCity.text     = propData.propertycity + ", "
+        holder.txtPropTState.text    = propData.propertystate + ", "
+        holder.txtPropTCountry.text  = propData.propertycountry + ", "
+        holder.txtPropTPrice.text    = "Price: $${propData.propertypurchaseprice}"
+
+        Glide.with(context).load(imgList[position%imgList.size]).into(holder.propImg)
+
+
     }
 
     inner class ViewHolder1(view: View): RecyclerView.ViewHolder(view){
@@ -36,7 +44,7 @@ class PropertyTAdapter(var propertyTList: List<PropertyT>, val context: Context)
         var txtPropTState   = view.findViewById<TextView>(R.id.propT_text_state)
         var txtPropTCountry = view.findViewById<TextView>(R.id.propT_text_country)
         var txtPropTPrice   = view.findViewById<TextView>(R.id.propT_text_price)
-        var txtPropTID      = view.findViewById<TextView>(R.id.propT_text_id)
+        var propImg       = view.findViewById<ImageView>(R.id.propT_img)
     }
 
 }

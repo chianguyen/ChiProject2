@@ -28,9 +28,14 @@
             android:layout_alignParentTop="false"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="76dp"
             android:clickable="true"
             android:src="@drawable/ic_btn_rmv"
-            app:backgroundTint="#00ffffff" />
+            android:visibility="invisible"
+            app:backgroundTint="#00ffffff"
+            app:elevation="@dimen/fui_min_height_target"
+            app:maxImageSize="@dimen/fui_min_height_target" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_proplist_add"
@@ -39,11 +44,30 @@
             android:layout_alignParentTop="false"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="58dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="139dp"
             android:clickable="true"
             android:src="@drawable/ic_btn_add"
+            android:visibility="invisible"
+            app:backgroundTint="#00ffffff"
+            app:elevation="48dp"
+            app:maxImageSize="@dimen/fui_min_height_target" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:clickable="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            app:elevation="48dp"
+            android:src="@drawable/ic_fab"
+            app:maxImageSize="@dimen/fui_min_height_target"
             app:backgroundTint="#00ffffff" />
+
 
 
     </RelativeLayout>

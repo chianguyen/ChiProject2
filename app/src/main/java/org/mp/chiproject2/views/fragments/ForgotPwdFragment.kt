@@ -1,6 +1,12 @@
 package org.mp.chiproject2.views.fragments
 
 
+import android.app.Application
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
+import android.content.Context.NOTIFICATION_SERVICE
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,12 +14,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
 import com.google.gson.JsonObject
 import kotlinx.android.synthetic.main.fragment_forgot_pwd.*
 import kotlinx.android.synthetic.main.fragment_forgot_pwd.view.*
 import org.mp.chiproject2.R
 import org.mp.chiproject2.network.ApiClient
 import org.mp.chiproject2.network.ApiInterface
+import org.mp.chiproject2.views.activities.LoginActivity
 import retrofit2.Call
 import retrofit2.Response
 
@@ -73,8 +81,6 @@ class ForgotPwdFragment : Fragment() {
 
             }
         })
-
-
 
     }
 

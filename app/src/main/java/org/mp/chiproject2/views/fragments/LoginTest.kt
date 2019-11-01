@@ -12,14 +12,14 @@ import org.mp.chiproject2.R
 /**
  * A simple [Fragment] subclass.
  */
-class PropertyDetailT : Fragment() {
+class LoginTest : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_property_detail_t, container, false)
+        return inflater.inflate(R.layout.fragment_login_test, container, false)
     }
 
 

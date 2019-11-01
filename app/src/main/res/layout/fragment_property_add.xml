@@ -29,6 +29,7 @@
             android:textSize="15sp"
             android:textColor="@color/white"
             android:fontFamily="casual"
+            android:singleLine="true"
             android:backgroundTint="@color/white"
             android:inputType="text"
             android:maxLines="1"
@@ -57,6 +58,7 @@
                 android:textSize="15sp"
                 android:textColor="@color/white"
                 android:fontFamily="casual"
+                android:singleLine="true"
                 android:backgroundTint="@color/white"
                 android:inputType="text"
                 android:maxLines="1"
@@ -76,6 +78,7 @@
 
                 android:id="@+id/property_add_state"
                 android:textSize="15sp"
+                android:singleLine="true"
                 android:textColor="@color/white"
                 android:fontFamily="casual"
                 android:backgroundTint="@color/white"
@@ -96,6 +99,7 @@
             <EditText
                 android:id="@+id/property_add_country"
                 android:textSize="15sp"
+                android:singleLine="true"
                 android:textColor="@color/white"
                 android:fontFamily="casual"
                 android:backgroundTint="@color/white"
@@ -128,6 +132,7 @@
                 android:textSize="15sp"
                 android:textColor="@color/white"
                 android:fontFamily="casual"
+                android:singleLine="true"
                 android:backgroundTint="@color/white"
                 android:inputType="text"
                 android:maxLines="1"
@@ -147,6 +152,7 @@
                 android:textSize="15sp"
                 android:textColor="@color/white"
                 android:fontFamily="casual"
+                android:singleLine="true"
                 android:backgroundTint="@color/white"
                 android:inputType="text"
                 android:maxLines="1"
@@ -173,57 +179,10 @@
             android:backgroundTint="@color/white"
             android:inputType="text"
             android:maxLines="1"
+            android:singleLine="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
-
-    <LinearLayout
-        android:weightSum="2"
-        android:orientation="horizontal"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Latitude"
-            android:layout_weight="1"
-            android:textColorHint="@color/white">
-
-            <EditText
-                android:id="@+id/property_add_latitude"
-                android:textSize="15sp"
-                android:textColor="@color/white"
-                android:fontFamily="casual"
-                android:backgroundTint="@color/white"
-                android:inputType="text"
-                android:maxLines="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Longitutde"
-            android:layout_weight="1"
-            android:textColorHint="@color/white">
-
-            <EditText
-                android:id="@+id/property_add_longitude"
-                android:textSize="15sp"
-                android:textColor="@color/white"
-                android:fontFamily="casual"
-                android:backgroundTint="@color/white"
-                android:inputType="text"
-                android:maxLines="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-    </LinearLayout>
 
 
     <com.google.android.material.button.MaterialButton
@@ -238,7 +197,7 @@
         app:strokeWidth="1dp"
         android:layout_marginLeft="140dp"
         android:layout_marginRight="140dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

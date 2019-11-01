@@ -25,6 +25,14 @@ data class PropertyL(
     var propertystate: String,
 
     @SerializedName("propertystatus")
-    var propertystatus: String
+    var propertystatus: String,
+
+    @SerializedName("propertylatitude")
+    var propertylatitude: String,
+
+    @SerializedName("propertylongitude")
+    var propertylongitude: String,
+
+    var img: String
 )
 
