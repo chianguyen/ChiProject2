@@ -36,3 +36,4 @@ data class PropertyL(
     var img: String
 )
 
+

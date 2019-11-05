@@ -53,15 +53,15 @@ class RegisterFragment : Fragment() {
 
                 //validates email
                 if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    reg_edit_email.setError("Enter valid email")
+                    reg_edit_email.error = "Enter valid email"
                 }
                 else {
-                    reg_edit_email.setError(null)
+                    reg_edit_email.error = null
                         //then validates password
                         if (password.isEmpty()) {
-                            reg_edit_pwd.setError("Enter password")
+                            reg_edit_pwd.error = "Enter password"
                         } else {
-                            reg_edit_pwd.setError(null)
+                            reg_edit_pwd.error = null
 
                                 if(view.reg_checkbox.isChecked){
 

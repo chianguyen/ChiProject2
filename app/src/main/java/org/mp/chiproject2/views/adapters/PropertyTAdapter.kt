@@ -11,8 +11,10 @@ import com.bumptech.glide.Glide
 import org.mp.chiproject2.R
 import org.mp.chiproject2.models.PropertyT
 import org.mp.chiproject2.tools.ImgDatabase
+import org.mp.chiproject2.views.activities.LandingActivityT
+import org.mp.chiproject2.views.fragments.PropertyDetailT
 
-class PropertyTAdapter(var propertyTList: List<PropertyT>, val context: Context): RecyclerView.Adapter<PropertyTAdapter.ViewHolder1>() {
+class  PropertyTAdapter(var propertyTList: List<PropertyT>, val context: Context): RecyclerView.Adapter<PropertyTAdapter.ViewHolder1>() {
 
     var imgList = ImgDatabase.houseList
 
@@ -45,6 +47,24 @@ class PropertyTAdapter(var propertyTList: List<PropertyT>, val context: Context)
         var txtPropTCountry = view.findViewById<TextView>(R.id.propT_text_country)
         var txtPropTPrice   = view.findViewById<TextView>(R.id.propT_text_price)
         var propImg       = view.findViewById<ImageView>(R.id.propT_img)
+
+        init {
+            view.setOnClickListener {
+                var propertyTitem = propertyTList[adapterPosition]
+
+                var fullAddress1 =
+                    "${propertyTitem.propertyaddress}\n" + "${propertyTitem.propertycity}, " +
+                            "${propertyTitem.propertystate}, ${propertyTitem.propertycountry}"
+
+                var propDetailT = PropertyDetailT.newInstance(fullAddress1, propertyTitem.propertypurchaseprice, imgList[adapterPosition%imgList.size]
+                )
+
+                (context as LandingActivityT).supportFragmentManager.beginTransaction()
+                    .replace(R.id.main_frameT, propDetailT).addToBackStack(null).commit()
+
+            }
+        }
+
     }
 
 }

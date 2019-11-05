@@ -20,9 +20,6 @@ import org.mp.chiproject2.views.adapters.PropertyTAdapter
 import retrofit2.Call
 import retrofit2.Response
 
-/**
- * A simple [Fragment] subclass.
- */
 class PropertyListT : Fragment() {
 
     override fun onCreateView(
@@ -33,7 +30,6 @@ class PropertyListT : Fragment() {
         var view = inflater.inflate(R.layout.fragment_property_list_t, container, false)
 
         view.recyclerViewPropT.layoutManager = LinearLayoutManager(view.context)
-
         showPropertyTList()
 
         return view
@@ -55,7 +51,14 @@ class PropertyListT : Fragment() {
 
                 var propertyTitems = response.body()
 
-                view?.recyclerViewPropT?.adapter = PropertyTAdapter(propertyTitems!!.propertiesT, view!!.context)
+                for(i in 0 until propertyTitems!!.propertiesT.size) {
+
+                    if(!propertyTitems.propertiesT[i].propertylongitude.isNullOrEmpty() && !propertyTitems.propertiesT[i].propertylatitude.isNullOrEmpty()) {
+                        view?.recyclerViewPropT?.adapter =
+                            PropertyTAdapter(propertyTitems.propertiesT, view!!.context)
+                    }
+
+                }
 
             }
         })

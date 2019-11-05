@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "873832777066-ndf489p5eh5ks60f97hnescs38v32cqq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.mp.chiproject2",
+            "certificate_hash": "3e1f3963f14f580628ff9a8a5888e56a5e48d52b"
+          }
+        },
+        {
           "client_id": "873832777066-ns728v8coh15u7d2k9qt16bq82bib12h.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

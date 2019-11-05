@@ -63,7 +63,7 @@ class PropertyLAdapter(var propertyLList: List<PropertyL>, val context: Context)
                 var propDetail = PropertyDetail.newInstance(
                     fullAddress1,property1.propertypurchaseprice, imgList[adapterPosition], property1.id)
 
-                (context as LandingActivityL).supportFragmentManager!!.beginTransaction().replace(R.id.main_frameL, propDetail).addToBackStack(null).commit()
+                (context as LandingActivityL).supportFragmentManager.beginTransaction().replace(R.id.main_frameL, propDetail).addToBackStack(null).commit()
 
             }
         }

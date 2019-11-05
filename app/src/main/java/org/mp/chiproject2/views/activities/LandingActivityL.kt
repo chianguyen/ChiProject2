@@ -5,9 +5,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.crashlytics.android.Crashlytics
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_landing_l.*
-import kotlinx.android.synthetic.main.activity_landing_t.*
+import io.fabric.sdk.android.Fabric
 import org.mp.chiproject2.R
 import org.mp.chiproject2.views.fragments.*
 
@@ -54,6 +54,8 @@ class LandingActivityL : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing_l)
 
+        Fabric.with(this, Crashlytics())
+
         val bottomNav : BottomNavigationView = findViewById(R.id.navViewL)
         bottomNav.setOnNavigationItemSelectedListener(onNaviItemSelected2)
 
@@ -66,6 +68,9 @@ class LandingActivityL : AppCompatActivity() {
         var actionBar = supportActionBar
         actionBar!!.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayHomeAsUpEnabled(true)
+        actionBar.setDisplayShowTitleEnabled(true)
+        actionBar.setTitle("PROPERTITAN")
+
 
         supportFragmentManager.beginTransaction().replace(R.id.main_frameL, PropertyListL()).commit()
 

@@ -10,7 +10,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:background="@color/blue"
+        android:background="@color/actual_blue"
         android:minHeight="?attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="50dp">
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:menu="@menu/nav_item_l"
-        android:background="@color/blue"
+        android:background="@color/actual_blue"
         app:itemTextColor="@color/white"
         app:itemIconTint="@color/white"
         android:layout_alignParentBottom="true"

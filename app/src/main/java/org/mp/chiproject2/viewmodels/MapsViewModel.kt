@@ -30,9 +30,11 @@ class MapsViewModel: ViewModel() {
 
         var propCall = apiInterface.showPropertyLList(userId, userType)
 
+        /*
         var lats = ArrayList<String>()
         var longs = ArrayList<String>()
         var address = ArrayList<String>()
+        */
 
         propCall.enqueue(object: retrofit2.Callback<PropertyLList>{
             override fun onFailure(call: Call<PropertyLList>, t: Throwable) {
@@ -47,7 +49,7 @@ class MapsViewModel: ViewModel() {
                 Log.i("PROP SIZE", propertyLitems!!.propertiesL.size.toString())
 
 
-                mapThing.value = propertyLitems!!.propertiesL
+                mapThing.value = propertyLitems.propertiesL
 
 
 /*                for (i in 0 until propertyLitems.propertiesL.size) {

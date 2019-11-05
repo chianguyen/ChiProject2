@@ -1,4 +1,3 @@
 package org.mp.chiproject2.repositories
 
-class PropertyTRepo {
-}
+class PropertyTRepo

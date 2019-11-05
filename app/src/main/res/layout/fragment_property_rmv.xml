@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".views.fragments.PropertyRmv"
-    android:background="@color/blue">
+    android:background="@color/white">
 
     <ImageView
         android:src="@drawable/house_symbol"
@@ -18,7 +18,7 @@
     <TextView
         android:text="Please input the id of the property for removal"
         android:textSize="25sp"
-        android:textColor="@color/white"
+        android:textColor="@color/actual_blue"
         android:textAlignment="center"
         android:fontFamily="@font/marko_one"
         android:layout_marginTop="30dp"
@@ -33,15 +33,15 @@
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
         android:layout_marginTop="20dp"
-        android:textColorHint="@color/white">
+        android:textColorHint="@color/actual_blue">
 
         <EditText
             android:id="@+id/property_rmv_id"
             android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="@color/actual_blue"
             android:fontFamily="casual"
             android:singleLine="true"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/actual_blue"
             android:textAlignment="center"
             android:inputType="text"
             android:maxLines="1"
@@ -53,7 +53,7 @@
         android:id="@+id/btn_prop_rmv"
         android:text="Remove"
         app:cornerRadius="10dp"
-        app:backgroundTint="@color/red"
+        app:backgroundTint="@color/actual_blue"
         android:textColor="@color/white"
         android:fontFamily="@font/marko_one"
         android:textSize="14sp"

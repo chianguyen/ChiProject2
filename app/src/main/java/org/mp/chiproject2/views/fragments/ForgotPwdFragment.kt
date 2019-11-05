@@ -43,10 +43,10 @@ class ForgotPwdFragment : Fragment() {
                 var forgotEmail = forgot_edit_email.text.toString()
 
                 if(forgotEmail.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(forgotEmail).matches()){
-                    forgot_edit_email.setError("Enter valid email")
+                    forgot_edit_email.error = "Enter valid email"
                 }
                 else {
-                    forgot_edit_email.setError(null)
+                    forgot_edit_email.error = null
 
                     retrievePwd(forgotEmail)
 

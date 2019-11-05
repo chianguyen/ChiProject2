@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import org.mp.chiproject2.models.PropertyT
 import org.mp.chiproject2.models.PropertyTList
 import org.mp.chiproject2.network.ApiClient
 import org.mp.chiproject2.network.ApiInterface
@@ -12,9 +13,11 @@ import retrofit2.Response
 
 class MapsTViewModel: ViewModel() {
 
-    fun showPropertyTList(): LiveData<Triple<ArrayList<String>, ArrayList<String>, ArrayList<String>>>{
+    //fun showPropertyTList(): LiveData<Triple<ArrayList<String>, ArrayList<String>, ArrayList<String>>>{
 
-        var mapThingT = MutableLiveData<Triple<ArrayList<String>, ArrayList<String>, ArrayList<String>>>()
+    fun showPropertyTList(): LiveData<List<PropertyT>>{
+    //    var mapThingT = MutableLiveData<Triple<ArrayList<String>, ArrayList<String>, ArrayList<String>>>()
+        var mapThingT = MutableLiveData<List<PropertyT>>()
 
         var latsT = ArrayList<String>()
         var longsT = ArrayList<String>()
@@ -35,7 +38,9 @@ class MapsTViewModel: ViewModel() {
 
                 Log.i("PROP T SIZE", propertyTitems!!.propertiesT.size.toString())
 
-                for(i in 0 until propertyTitems!!.propertiesT.size){
+                mapThingT.value = propertyTitems.propertiesT
+
+/*                for(i in 0 until propertyTitems!!.propertiesT.size){
                     if(!propertyTitems!!.propertiesT[i].propertylatitude.isNullOrEmpty() && !propertyTitems!!.propertiesT[i].propertylatitude.isNullOrEmpty()){
 
                         var fullAddressT = "${propertyTitems!!.propertiesT[i].propertyaddress}\n" +
@@ -46,9 +51,9 @@ class MapsTViewModel: ViewModel() {
                         addressT.add(fullAddressT)
 
                     }
-                }
+                }*/
 
-                mapThingT.value = Triple(longsT, latsT, addressT)
+ //               mapThingT.value = Triple(longsT, latsT, addressT)
 
             }
         })

@@ -33,18 +33,17 @@ class TennantAdapter(var tenantList : List<Tenant>, val context: Context): Recyc
      //   holder.txtTenantID.text      = tenantData.id
         holder.txtTenantName.text    = tenantData.tenantname
         holder.txtTenantEmail.text   = "Email: ${tenantData.tenantemail}"
-        holder.txtTenantAddress.text = "Address: ${tenantData.tenantaddress}"
+       // holder.txtTenantAddress.text = "Address: ${tenantData.tenantaddress}"
         holder.txtTenantMobile.text  = "Mobile: ${tenantData.tenantmobile}"
         holder.txtTenantPropID.text  = "Property ID: ${tenantData.propertyid}"
         Glide.with(context).load(imgList[position%imgList.size]).into(holder.imgTenant)
-
     }
 
     inner class ViewHolder2(view: View): RecyclerView.ViewHolder(view){
        // var txtTenantID     = view.findViewById<TextView>(R.id.tenant_list_id)
         var txtTenantName   = view.findViewById<TextView>(R.id.tenant_list_name)
         var txtTenantEmail  = view.findViewById<TextView>(R.id.tenant_list_email)
-        var txtTenantAddress= view.findViewById<TextView>(R.id.tenant_list_address)
+     //   var txtTenantAddress= view.findViewById<TextView>(R.id.tenant_list_address)
         var txtTenantMobile = view.findViewById<TextView>(R.id.tenant_list_mobile)
         var txtTenantPropID = view.findViewById<TextView>(R.id.tenant_list_propID)
         var imgTenant      = view.findViewById<ImageView>(R.id.tenant_photo)
@@ -55,8 +54,10 @@ class TennantAdapter(var tenantList : List<Tenant>, val context: Context): Recyc
                 var tenantItem =tenantList[adapterPosition]
                 Log.i("TENNANT NAME", tenantItem.tenantname)
 
-                var tenantFrag = TennantDetail.newInstance(tenantItem.tenantmobile, tenantItem.tenantemail, tenantItem.tenantname, imgList[adapterPosition])
-                (context as LandingActivityL).supportFragmentManager!!.beginTransaction().replace(R.id.main_frameL, tenantFrag).addToBackStack(null).commit()
+                var fullAddress = tenantItem.tenantaddress
+
+                var tenantFrag = TennantDetail.newInstance(tenantItem.tenantmobile, tenantItem.tenantemail, tenantItem.tenantname, imgList[adapterPosition], fullAddress)
+                (context as LandingActivityL).supportFragmentManager.beginTransaction().replace(R.id.main_frameL, tenantFrag).addToBackStack(null).commit()
 
             }
         }

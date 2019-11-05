@@ -4,7 +4,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="blue">#013768</color>
+    <color name="blue">#545454</color>
+
+    <color name="actual_blue">#013768</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
 <!--    <color name="deep_red">#8B0202</color>-->

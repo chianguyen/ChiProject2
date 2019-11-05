@@ -55,9 +55,10 @@ class PropertyDetail : Fragment() {
         var propImg = param3
         var propID = param4
 
-        view.detail_address.setText(param1)
-        view.detail_price.setText(param2)
+        view.detail_address.text = param1
+        view.detail_price.text = "$" + param2
         Glide.with(view!!.context).load(param3.toString()).into(view.img_house_detail)
+        Log.i("DETAIL IMG URL", param3.toString())
 
         view.detail_delete.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {

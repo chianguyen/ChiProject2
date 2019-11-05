@@ -10,7 +10,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.crashlytics.android.Crashlytics
 import com.google.gson.JsonObject
+import io.fabric.sdk.android.Fabric
 import kotlinx.android.synthetic.main.activity_forgot_pwd.*
 import org.mp.chiproject2.R
 import org.mp.chiproject2.network.ApiClient
@@ -24,16 +26,18 @@ class ForgotPwdAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_pwd)
 
+        Fabric.with(this, Crashlytics())
+
         forgot_btn_forgot.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
 
                 var forgotEmail = forgot_edit_email.text.toString()
 
                 if(forgotEmail.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(forgotEmail).matches()){
-                    forgot_edit_email.setError("Enter valid email")
+                    forgot_edit_email.error = "Enter valid email"
                 }
                 else {
-                    forgot_edit_email.setError(null)
+                    forgot_edit_email.error = null
 
                     retrievePwd(forgotEmail)
 

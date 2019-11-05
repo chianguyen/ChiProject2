@@ -8,6 +8,11 @@
     <string name="nav_map">Maps</string>
     <string name="nav_profile">Profile</string>
     <string name="title_activity_maps">Map</string>
+
+    <!-- Facebook -->
+    <string name="facebook_app_id">271016429602436</string>
+    <string name="fb_login_protocol_scheme">fb271016429602436</string>
+
     <string name="terms_txt">TERMS OF USE
 
 Last updated October 30, 2019

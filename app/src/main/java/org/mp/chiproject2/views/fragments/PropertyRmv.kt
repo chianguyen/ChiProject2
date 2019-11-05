@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.fragment_property_rmv.*
 import kotlinx.android.synthetic.main.fragment_property_rmv.view.*
 import okhttp3.ResponseBody
@@ -33,6 +34,29 @@ class PropertyRmv : Fragment() {
         view.btn_prop_rmv.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
                 var propertyID = property_rmv_id.text.toString()
+
+                val builder = AlertDialog.Builder(view.context)
+
+                // Set the alert dialog title
+                builder.setTitle("Property Removing")
+
+                // Display a message on alert dialog
+                builder.setMessage("Are you sure you want to remove this property?")
+
+                builder.setPositiveButton("YES"){dialog, which ->
+                    rmvProperty(propertyID)
+
+                }
+
+                builder.setNegativeButton("NO"){dialog, which ->
+
+                }
+
+                // Finally, make the alert dialog using builder
+                val dialog: AlertDialog = builder.create()
+
+                // Display the alert dialog on app interface
+                dialog.show()
 
                 rmvProperty(propertyID)
             }

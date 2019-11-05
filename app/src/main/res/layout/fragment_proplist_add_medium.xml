@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    android:background="@color/white"
     tools:context=".views.fragments.ProplistAddMedium">
 
 
@@ -16,8 +16,8 @@
         android:fontFamily="@font/marko_one"
         android:text="Please choose a category to add"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="32dp"
+        android:textColor="@color/actual_blue"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +31,7 @@
         android:text="Property"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:backgroundTint="@color/red"
+        app:backgroundTint="@color/actual_blue"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +54,7 @@
         android:text="Tenant"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:backgroundTint="@color/red"
+        app:backgroundTint="@color/actual_blue"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

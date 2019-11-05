@@ -18,9 +18,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import kotlinx.android.synthetic.main.activity_landing_l.*
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 import org.mp.chiproject2.R
+import org.mp.chiproject2.views.activities.LandingActivityL
 import org.mp.chiproject2.views.activities.LoginActivity
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -41,6 +43,7 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_profile, container, false)
 
@@ -49,8 +52,8 @@ class ProfileFragment : Fragment() {
         var userId = sp.getString("user_id", "DEFAULT").toString()
         var userEmail = sp.getString("user_email", "Default").toString()
 
-        view.profile_userid.setText(userId)
-        view.profile_email.setText(userEmail)
+       // view.profile_userid.text = "ID: " + userId
+        view.profile_email.text = "Email: " + userEmail
 
         view.btn_logout.setOnClickListener {
             var i = Intent(view.context, LoginActivity::class.java)
@@ -100,7 +103,7 @@ class ProfileFragment : Fragment() {
         {
             if (data != null)
             {
-                val contentURI = data!!.data
+                val contentURI = data.data
                 try
                 {
                     val bitmap = MediaStore.Images.Media.getBitmap(view?.context?.contentResolver, contentURI)
@@ -143,17 +146,17 @@ class ProfileFragment : Fragment() {
         {
             Log.d("heel",wallpaperDirectory.toString())
             val f = File(wallpaperDirectory, ((Calendar.getInstance()
-                .getTimeInMillis()).toString() + ".jpg"))
+                .timeInMillis).toString() + ".jpg"))
             f.createNewFile()
             val fo = FileOutputStream(f)
             fo.write(bytes.toByteArray())
             MediaScannerConnection.scanFile(view?.context,
-                arrayOf(f.getPath()),
+                arrayOf(f.path),
                 arrayOf("image/jpeg"), null)
             fo.close()
-            Log.d("TAG", "File Saved::--->" + f.getAbsolutePath())
+            Log.d("TAG", "File Saved::--->" + f.absolutePath)
 
-            return f.getAbsolutePath()
+            return f.absolutePath
         }
         catch (e1: IOException) {
             e1.printStackTrace()

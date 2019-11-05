@@ -8,8 +8,8 @@
     android:background="@drawable/bg_pic">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:background="@color/blue"
+        android:id="@+id/toolbarT"
+        android:background="@color/actual_blue"
         android:minHeight="?attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="50dp">
@@ -22,6 +22,7 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:textSize="25sp"
+            android:visibility="gone"
             android:fontFamily="@font/marko_one"
             android:textAlignment="center"/>
 
@@ -31,7 +32,7 @@
         android:id="@+id/main_frameT"
         android:layout_width="match_parent"
         android:layout_height="558dp"
-        android:layout_below="@id/toolbar">
+        android:layout_below="@id/toolbarT">
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -39,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:menu="@menu/nav_item_t"
-        android:background="@color/blue"
+        android:background="@color/actual_blue"
         app:itemTextColor="@color/white"
         app:itemIconTint="@color/white"
         android:layout_alignParentBottom="true"

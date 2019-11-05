@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    android:background="@color/white"
     tools:context=".views.fragments.TennantAdd">
 
 
@@ -23,15 +23,15 @@
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp"
         android:layout_marginTop="50dp"
-        android:textColorHint="@color/white">
+        android:textColorHint="@color/actual_blue">
 
         <EditText
             android:id="@+id/tenant_add_name"
             android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="@color/actual_blue"
             android:fontFamily="casual"
             android:singleLine="true"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/actual_blue"
             android:inputType="text"
             android:maxLines="1"
             android:layout_width="match_parent"
@@ -44,15 +44,15 @@
         android:hint="Tenant Email"
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp"
-        android:textColorHint="@color/white">
+        android:textColorHint="@color/actual_blue">
 
         <EditText
             android:id="@+id/tenant_add_email"
             android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="@color/actual_blue"
             android:fontFamily="casual"
             android:singleLine="true"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/actual_blue"
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:layout_width="match_parent"
@@ -65,15 +65,15 @@
         android:hint="Tenant Address"
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp"
-        android:textColorHint="@color/white">
+        android:textColorHint="@color/actual_blue">
 
         <EditText
             android:id="@+id/tenant_add_address"
             android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="@color/actual_blue"
             android:fontFamily="casual"
             android:singleLine="true"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/actual_blue"
             android:inputType="text"
             android:maxLines="1"
             android:layout_width="match_parent"
@@ -86,15 +86,15 @@
         android:hint="Tenant Mobile"
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp"
-        android:textColorHint="@color/white">
+        android:textColorHint="@color/actual_blue">
 
         <EditText
             android:id="@+id/tenant_add_mobile"
             android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="@color/actual_blue"
             android:fontFamily="casual"
             android:singleLine="true"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/actual_blue"
             android:inputType="phone"
             android:maxLines="1"
             android:layout_width="match_parent"
@@ -107,15 +107,15 @@
         android:hint="Assigning to Property ID: "
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp"
-        android:textColorHint="@color/white">
+        android:textColorHint="@color/actual_blue">
 
         <EditText
             android:id="@+id/tenant_add_propID"
             android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="@color/actual_blue"
             android:fontFamily="casual"
             android:singleLine="true"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/actual_blue"
             android:inputType="text"
             android:maxLines="1"
             android:layout_width="match_parent"
@@ -126,7 +126,7 @@
         android:id="@+id/btn_tenant_add"
         android:text="Add"
         app:cornerRadius="10dp"
-        app:backgroundTint="@color/red"
+        app:backgroundTint="@color/actual_blue"
         android:textColor="@color/white"
         android:fontFamily="@font/marko_one"
         android:textSize="14sp"
@@ -134,7 +134,7 @@
         app:strokeWidth="1dp"
         android:layout_marginLeft="140dp"
         android:layout_marginRight="140dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
