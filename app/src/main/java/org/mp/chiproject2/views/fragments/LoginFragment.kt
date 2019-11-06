@@ -52,8 +52,8 @@ class LoginFragment : Fragment() {
 
         //=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
         var sp: SharedPreferences    = view.context!!.getSharedPreferences("chamber", Context.MODE_PRIVATE)
-        var s_email = sp.getString("login_key", " ")
-        var s_pwd = sp.getString("login_pwd", " ")
+        var s_email = sp.getString("login_key", "")
+        var s_pwd = sp.getString("login_pwd", "")
 
         view.login_edit_email.setText(s_email.toString())
         view.login_edit_password.setText(s_pwd.toString())

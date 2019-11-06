@@ -8,6 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import org.mp.chiproject2.R
 import org.mp.chiproject2.models.PropertyL
 import org.mp.chiproject2.models.PropertyLList
@@ -40,7 +42,8 @@ class PropertyLAdapter(var propertyLList: List<PropertyL>, val context: Context)
         //Glide.with(context).load(imgList[position]).into(holder.propImg)
 
         //% to wrap
-        Glide.with(context).load(imgList[position%imgList.size]).into(holder.propImg)
+        var requestOption = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
+        Glide.with(context).load(imgList[position%imgList.size]).apply(requestOption).into(holder.propImg)
 
     }
 

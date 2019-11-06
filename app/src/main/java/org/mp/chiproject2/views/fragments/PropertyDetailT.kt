@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.fragment_property_detail_t.*
 import kotlinx.android.synthetic.main.fragment_property_detail_t.view.*
 
 import org.mp.chiproject2.R
+import org.mp.chiproject2.tools.DescriptionList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +28,8 @@ class PropertyDetailT : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var param3: String? = null
+
+    var desList = DescriptionList.descriptionList
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +55,8 @@ class PropertyDetailT : Fragment() {
         view.detailT_address.text = propAddress
         view.detailT_price.text = "$" + propPrice
         Glide.with(view!!.context).load(propImg.toString()).into(view.img_house_detailT)
+
+        view.prop_descriptionT.text = desList[(0..11).random()]
 
         view.property_shareT.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {

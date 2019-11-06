@@ -18,6 +18,7 @@ import okhttp3.ResponseBody
 import org.mp.chiproject2.R
 import org.mp.chiproject2.network.ApiClient
 import org.mp.chiproject2.network.ApiInterface
+import org.mp.chiproject2.tools.DescriptionList
 import retrofit2.Call
 import retrofit2.Response
 
@@ -28,10 +29,14 @@ private const val ARG_PARAM4 = "param4"
 
 class PropertyDetail : Fragment() {
 
+    var desList = DescriptionList.descriptionList
+
     private var param1: String? = null
     private var param2: String? = null
     private var param3: String? = null
     private var param4: String? = null
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +62,9 @@ class PropertyDetail : Fragment() {
 
         view.detail_address.text = param1
         view.detail_price.text = "$" + param2
+
+        view.prop_description.text = desList[(0..11).random()]
+
         Glide.with(view!!.context).load(param3.toString()).into(view.img_house_detail)
         Log.i("DETAIL IMG URL", param3.toString())
 

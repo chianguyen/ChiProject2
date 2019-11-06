@@ -2,11 +2,9 @@ package org.mp.chiproject2.views.fragments
 
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
-import android.util.Log
 import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,11 +12,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.crashlytics.android.Crashlytics
-import io.fabric.sdk.android.Fabric
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -26,13 +21,12 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import org.mp.chiproject2.MapInfoWindowAdapter
+import org.mp.chiproject2.tools.MapInfoWindowAdapter
 import org.mp.chiproject2.R
 import org.mp.chiproject2.models.PropertyL
 import org.mp.chiproject2.tools.ImgDatabase
 import org.mp.chiproject2.viewmodels.MapsViewModel
 import org.mp.chiproject2.views.activities.LandingActivityL
-import kotlin.random.Random
 
 /**
  * A simple [Fragment] subclass.
@@ -76,11 +70,6 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnInfoWindowClickL
         var mMap = googleMap
 
         mMap!!.mapType = GoogleMap.MAP_TYPE_HYBRID
-
-        with(mMap){
-            setInfoWindowAdapter(MapInfoWindowAdapter(this@MapFragment))
-            setOnInfoWindowClickListener(this@MapFragment)
-        }
 
         /*
         mMap.setOnInfoWindowClickListener(object : GoogleMap.OnInfoWindowClickListener {
@@ -139,8 +128,8 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnInfoWindowClickL
         })
 
         val chicago = LatLng(41.881832, -87.623177)
-///        mMap.addMarker(MarkerOptions().position(chicago).title("Chicago"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(chicago, 10.0f))
+//        mMap.addMarker(MarkerOptions().position(chicago).title("Chicago"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(chicago, 7.0f))
 
 
     }

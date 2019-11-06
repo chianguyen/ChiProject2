@@ -54,28 +54,42 @@ class TennantDetail : Fragment() {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_tennant_detail, container, false)
 
-        view.personal_phone.text = "Phone:\n$param1"
-        view.personal_email.text = "Email:\n$param2"
-        view.personal_address.text = "Address:\n$param5"
+        view.personal_phone.text = "$param1"
+        view.personal_email.text = "$param2"
+        view.personal_address.text = "$param5"
         view.personal_name.text = param3
         Glide.with(view!!.context).load(param4.toString()).into(view.personal_img)
         Log.i("IMG CONTENT", param4.toString())
 
-        view.tenant_call.setOnClickListener(object : View.OnClickListener{
+        view.personal_phone.setOnClickListener(object: View.OnClickListener{
             override fun onClick(v: View?) {
                 var iphone = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$param1"))
                 startActivity(iphone)
             }
         })
 
-        view.tenant_text.setOnClickListener(object : View.OnClickListener{
+        view.personal_email.setOnClickListener(object: View.OnClickListener{
+            override fun onClick(v: View?) {
+                var iphone = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:$param2"))
+                startActivity(iphone)
+            }
+        })
+
+        view.tenant_call.   setOnClickListener(object: View.OnClickListener{
+            override fun onClick(v: View?) {
+                var iphone = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$param1"))
+                startActivity(iphone)
+            }
+        })
+
+        view.tenant_text.   setOnClickListener(object: View.OnClickListener{
             override fun onClick(v: View?) {
                 var iphone = Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:$param1"))
                 startActivity(iphone)
             }
         })
 
-        view.tenant_email.setOnClickListener(object : View.OnClickListener{
+        view.tenant_email.  setOnClickListener(object: View.OnClickListener{
             override fun onClick(v: View?) {
                 var iphone = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:$param2"))
                 startActivity(iphone)

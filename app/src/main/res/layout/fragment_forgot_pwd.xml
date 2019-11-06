@@ -10,7 +10,7 @@
         android:textColor="@color/white"
         android:text="FORGOT PASSWORD"
         android:fontFamily="@font/marko_one"
-        android:textSize="50dp"
+        android:textSize="40dp"
         android:textAlignment="center"
         android:layout_marginTop="70dp"
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
         android:hint="Email"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:textColorHint="@color/white">
 
         <EditText

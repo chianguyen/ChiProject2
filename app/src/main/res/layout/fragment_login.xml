@@ -14,7 +14,7 @@
         android:text="PROPERTITAN"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="50dp"
+        android:textSize="40dp"
         app:fontFamily="@font/marko_one" />
 
     <!--Email Field-->
@@ -70,6 +70,7 @@
         android:layout_width="389dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal"
         android:weightSum="2">
 
@@ -78,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="46dp"
             android:text="Remember Login" />
 
         <com.google.android.material.button.MaterialButton
@@ -107,7 +108,7 @@
         app:strokeColor="@color/white"
         android:layout_marginLeft="140dp"
         android:layout_marginRight="140dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -134,7 +135,7 @@
         android:fontFamily="@font/marko_one"
         app:backgroundTint="#00ffffff"
         android:textSize="14sp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

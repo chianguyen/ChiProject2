@@ -10,7 +10,7 @@
         android:textColor="@color/white"
         android:text="REGISTER"
         android:fontFamily="@font/marko_one"
-        android:textSize="70dp"
+        android:textSize="40dp"
         android:textAlignment="center"
         android:layout_marginTop="70dp"
         android:layout_width="match_parent"
@@ -113,9 +113,9 @@
     </com.google.android.material.textfield.TextInputLayout>-->
 
     <RadioGroup
-        android:layout_gravity="center"
+        android:layout_gravity="left"
         android:layout_marginRight="30dp"
-        android:layout_marginLeft="90dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:weightSum="2"
@@ -140,7 +140,7 @@
 
     <CheckBox
         android:id="@+id/reg_checkbox"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_gravity="center"
         android:text="I have read and agree with Terms of Service"
         android:layout_width="wrap_content"
@@ -166,6 +166,7 @@
     <LinearLayout
     android:orientation="horizontal"
     android:weightSum="2"
+    android:layout_marginTop="20dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 

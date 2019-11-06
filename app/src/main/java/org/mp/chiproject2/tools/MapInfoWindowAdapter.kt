@@ -1,4 +1,4 @@
-package org.mp.chiproject2
+package org.mp.chiproject2.tools
 
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -6,9 +6,9 @@ import com.bumptech.glide.Glide
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.Marker
 import kotlinx.android.synthetic.main.info_window.view.*
+import org.mp.chiproject2.R
 import org.mp.chiproject2.models.PropertyL
 import org.mp.chiproject2.models.PropertyT
-import org.mp.chiproject2.tools.ImgDatabase
 
 class MapInfoWindowAdapter(val context: Fragment): GoogleMap.InfoWindowAdapter {
 

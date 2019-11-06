@@ -58,7 +58,6 @@ class PropertyRmv : Fragment() {
                 // Display the alert dialog on app interface
                 dialog.show()
 
-                rmvProperty(propertyID)
             }
         })
 
@@ -78,7 +77,7 @@ class PropertyRmv : Fragment() {
 
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 Log.i("PROP RMV RES", response.body()!!.string())
-                Toast.makeText(view?.context, response.body()!!.string(), Toast.LENGTH_SHORT).show()
+                Toast.makeText(view?.context, "Property deleted", Toast.LENGTH_SHORT).show()
                 fragmentManager!!.beginTransaction().replace(R.id.main_frameL, PropertyListL()).addToBackStack(null).commit()
             }
         })

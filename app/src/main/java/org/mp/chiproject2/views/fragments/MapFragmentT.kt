@@ -28,9 +28,6 @@ import org.mp.chiproject2.tools.ImgDatabase
 import org.mp.chiproject2.viewmodels.MapsTViewModel
 import org.mp.chiproject2.views.activities.LandingActivityT
 
-/**
- * A simple [Fragment] subclass.
- */
 class MapFragmentT : Fragment(), OnMapReadyCallback {
 
     lateinit var mapModelT : MapsTViewModel
@@ -128,7 +125,7 @@ class MapFragmentT : Fragment(), OnMapReadyCallback {
 
         val chicago = LatLng(41.881832, -87.623177)
      //   mMap.addMarker(MarkerOptions().position(chicago).title("HERE"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(chicago, 10.0f))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(chicago, 7.0f))
 
 
     }

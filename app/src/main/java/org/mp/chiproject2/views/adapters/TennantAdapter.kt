@@ -51,12 +51,12 @@ class TennantAdapter(var tenantList : List<Tenant>, val context: Context): Recyc
         init {
             view.setOnClickListener{
 
-                var tenantItem =tenantList[adapterPosition]
+                var tenantItem =tenantList[adapterPosition%tenantList.size]
                 Log.i("TENNANT NAME", tenantItem.tenantname)
 
                 var fullAddress = tenantItem.tenantaddress
 
-                var tenantFrag = TennantDetail.newInstance(tenantItem.tenantmobile, tenantItem.tenantemail, tenantItem.tenantname, imgList[adapterPosition], fullAddress)
+                var tenantFrag = TennantDetail.newInstance(tenantItem.tenantmobile, tenantItem.tenantemail, tenantItem.tenantname, imgList[adapterPosition%imgList.size], fullAddress)
                 (context as LandingActivityL).supportFragmentManager.beginTransaction().replace(R.id.main_frameL, tenantFrag).addToBackStack(null).commit()
 
             }
