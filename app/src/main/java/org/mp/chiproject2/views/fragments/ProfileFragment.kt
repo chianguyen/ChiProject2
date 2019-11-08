@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -46,6 +47,8 @@ class ProfileFragment : Fragment() {
 
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        view.profile_container.animation = AnimationUtils.loadAnimation(context, R.anim.fate_transistion_anim2)
 
         var sp: SharedPreferences = view.context!!.getSharedPreferences("chamber", Context.MODE_PRIVATE)
 

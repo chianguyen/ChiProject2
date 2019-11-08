@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.lifecycle.Observer
@@ -21,6 +22,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.fragment_map_fragment_t.view.*
 
 import org.mp.chiproject2.R
 import org.mp.chiproject2.models.PropertyT
@@ -47,6 +49,8 @@ class MapFragmentT : Fragment(), OnMapReadyCallback {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_map_fragment_t, container, false)
 
+        view.map_containerT.animation = AnimationUtils.loadAnimation(context, R.anim.fate_transistion_anim2)
+
         mapModelT = ViewModelProviders.of(landingActivityT).get(MapsTViewModel::class.java)
 
         var mapFragment: SupportMapFragment = childFragmentManager.findFragmentById(R.id.mapT) as SupportMapFragment
@@ -67,7 +71,7 @@ class MapFragmentT : Fragment(), OnMapReadyCallback {
             override fun onInfoWindowClick(p0: Marker?) {
                 var propertyD = p0?.tag as PropertyT
 //                var propDetailT = PropertyDetailT.newInstance(propertyD.propertyaddress, propertyD.propertypurchaseprice, imgList[(0..12).random()])
-                var propDetailT = PropertyDetailT.newInstance(propertyD.propertyaddress, propertyD.propertypurchaseprice, imgList[(0..12).random()])
+                var propDetailT = PropertyDetailT.newInstance(propertyD.propertyaddress, propertyD.propertypurchaseprice, imgList[(0..11).random()%imgList.size])
                 (context as LandingActivityT).supportFragmentManager.beginTransaction().replace(R.id.main_frameT, propDetailT).addToBackStack(null).commit()
 
             }

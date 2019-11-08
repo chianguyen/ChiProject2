@@ -81,6 +81,7 @@ class LandingActivityT : AppCompatActivity() {
             }
         })
 
+
     }
 
     private fun openFragment(fragment: Fragment){

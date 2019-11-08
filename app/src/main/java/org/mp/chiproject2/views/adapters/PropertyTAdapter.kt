@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -37,6 +38,9 @@ class  PropertyTAdapter(var propertyTList: List<PropertyT>, val context: Context
 
         Glide.with(context).load(imgList[position%imgList.size]).into(holder.propImg)
 
+        //animation
+        holder.propImg.animation = AnimationUtils.loadAnimation(context, R.anim.fate_transistion_anim)
+        holder.container.animation = AnimationUtils.loadAnimation(context, R.anim.fade_scale_anim)
 
     }
 
@@ -47,6 +51,8 @@ class  PropertyTAdapter(var propertyTList: List<PropertyT>, val context: Context
         var txtPropTCountry = view.findViewById<TextView>(R.id.propT_text_country)
         var txtPropTPrice   = view.findViewById<TextView>(R.id.propT_text_price)
         var propImg       = view.findViewById<ImageView>(R.id.propT_img)
+        var container          = view.findViewById<View>(R.id.propertyT_container)
+
 
         init {
             view.setOnClickListener {

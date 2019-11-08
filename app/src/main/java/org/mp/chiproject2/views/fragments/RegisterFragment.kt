@@ -76,7 +76,7 @@ class RegisterFragment : Fragment() {
                                     Toast.makeText(view.context, "Registration successful!", Toast.LENGTH_SHORT).show()
 
                                 } else{
-                                    Toast.makeText(view.context, "You have to agree with out terms to register", Toast.LENGTH_LONG).show()
+                                    Toast.makeText(view.context, "You have to agree with our terms to register", Toast.LENGTH_LONG).show()
                                 }
 
                         }

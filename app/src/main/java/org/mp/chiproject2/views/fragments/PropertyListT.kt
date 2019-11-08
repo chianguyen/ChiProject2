@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_property_list_t.*
 import kotlinx.android.synthetic.main.fragment_property_list_t.view.*
@@ -28,6 +29,8 @@ class PropertyListT : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_property_list_t, container, false)
+
+        view.proplistT_container.animation = AnimationUtils.loadAnimation(context, R.anim.fate_transistion_anim3)
 
         view.recyclerViewPropT.layoutManager = LinearLayoutManager(view.context)
         showPropertyTList()

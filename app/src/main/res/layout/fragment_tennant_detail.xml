@@ -6,7 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".views.fragments.TennantDetail"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:id="@+id/tenantdetail_container">
 
     <LinearLayout
         android:orientation="vertical"

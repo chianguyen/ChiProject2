@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -30,23 +31,24 @@ class TennantAdapter(var tenantList : List<Tenant>, val context: Context): Recyc
 
     override fun onBindViewHolder(holder: ViewHolder2, position: Int) {
         var tenantData        = tenantList.get(position)
-     //   holder.txtTenantID.text      = tenantData.id
         holder.txtTenantName.text    = tenantData.tenantname
         holder.txtTenantEmail.text   = "Email: ${tenantData.tenantemail}"
-       // holder.txtTenantAddress.text = "Address: ${tenantData.tenantaddress}"
         holder.txtTenantMobile.text  = "Mobile: ${tenantData.tenantmobile}"
         holder.txtTenantPropID.text  = "Property ID: ${tenantData.propertyid}"
+
         Glide.with(context).load(imgList[position%imgList.size]).into(holder.imgTenant)
+
+        holder.imgTenant.animation = AnimationUtils.loadAnimation(context, R.anim.fate_transistion_anim)
+        holder.container.animation = AnimationUtils.loadAnimation(context, R.anim.fade_scale_anim)
     }
 
     inner class ViewHolder2(view: View): RecyclerView.ViewHolder(view){
-       // var txtTenantID     = view.findViewById<TextView>(R.id.tenant_list_id)
         var txtTenantName   = view.findViewById<TextView>(R.id.tenant_list_name)
         var txtTenantEmail  = view.findViewById<TextView>(R.id.tenant_list_email)
-     //   var txtTenantAddress= view.findViewById<TextView>(R.id.tenant_list_address)
         var txtTenantMobile = view.findViewById<TextView>(R.id.tenant_list_mobile)
         var txtTenantPropID = view.findViewById<TextView>(R.id.tenant_list_propID)
         var imgTenant      = view.findViewById<ImageView>(R.id.tenant_photo)
+        var container          = view.findViewById<View>(R.id.tenant_container)
 
         init {
             view.setOnClickListener{

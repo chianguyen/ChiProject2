@@ -136,14 +136,14 @@ class LoginFragment : Fragment() {
                     builder.setTitle("Sign in with Google")
                     builder.setMessage("Do you want to login as tenant or landlord?")
 
-                    builder.setPositiveButton("Tenant"){dialog, which ->
+                    builder.setPositiveButton("Tenant"){_, _ ->
 
 
                         var ii = Intent(view!!.context, LandingActivityT::class.java)
                         startActivity(ii)
                     }
 
-                    builder.setNegativeButton("Landlord"){dialog, which ->
+                    builder.setNegativeButton("Landlord"){_, _ ->
 
                         var ii = Intent(view!!.context, LandingActivityL::class.java)
                         startActivity(ii)

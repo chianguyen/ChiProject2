@@ -100,6 +100,8 @@ dependencies {
     // Getting a "Could not find" error? Make sure that you've added
     // Google's Maven repository to your root-level build.gradle file
 
+    //Dexter for permissions
+    implementation 'com.karumi:dexter:6.0.0'
 
 
 }

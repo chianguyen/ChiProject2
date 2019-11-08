@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_landing_l.*
 import kotlinx.android.synthetic.main.activity_landing_t.*
@@ -54,6 +55,8 @@ class TennantDetail : Fragment() {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_tennant_detail, container, false)
 
+        view.tenantdetail_container.animation = AnimationUtils.loadAnimation(context, R.anim.fate_transistion_anim2)
+
         view.personal_phone.text = "$param1"
         view.personal_email.text = "$param2"
         view.personal_address.text = "$param5"
@@ -63,7 +66,7 @@ class TennantDetail : Fragment() {
 
         view.personal_phone.setOnClickListener(object: View.OnClickListener{
             override fun onClick(v: View?) {
-                var iphone = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$param1"))
+                var iphone = Intent(Intent.ACTION_CALL, Uri.parse("tel:$param1"))
                 startActivity(iphone)
             }
         })

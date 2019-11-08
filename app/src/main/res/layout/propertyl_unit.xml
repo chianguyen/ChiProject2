@@ -5,7 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     android:layout_margin="5dp"
-    android:background="@color/white">
+    app:cardElevation="7dp"
+    android:elevation="10dp"
+    android:id="@+id/property_holder">
 
     <LinearLayout
         android:orientation="horizontal"

@@ -7,6 +7,4 @@
     android:id="@+id/login_act"
     tools:context=".views.activities.LoginActivity">
 
-
-
 </FrameLayout>

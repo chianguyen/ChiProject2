@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_main"
     android:orientation="vertical"
+    android:id="@+id/profile_container"
     tools:context=".views.fragments.ProfileFragment">
 
     <androidx.appcompat.widget.AppCompatImageView

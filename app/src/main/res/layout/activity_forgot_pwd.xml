@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".views.activities.ForgotPwdAct"
-    android:background="@drawable/bg_main">
+    android:background="@drawable/bg_main"
+    android:id="@+id/forgot_container">
 
 
     <TextView

@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.lifecycle.Observer
@@ -21,12 +22,14 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import org.mp.chiproject2.tools.MapInfoWindowAdapter
+import kotlinx.android.synthetic.main.fragment_map.view.*
 import org.mp.chiproject2.R
 import org.mp.chiproject2.models.PropertyL
 import org.mp.chiproject2.tools.ImgDatabase
+import org.mp.chiproject2.tools.MapInfoWindowAdapter
 import org.mp.chiproject2.viewmodels.MapsViewModel
 import org.mp.chiproject2.views.activities.LandingActivityL
+import kotlin.random.Random
 
 /**
  * A simple [Fragment] subclass.
@@ -44,7 +47,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnInfoWindowClickL
 
     override fun onInfoWindowClick(p0: Marker) {
         var propertyD = p0.tag as PropertyL
-        var propDetail = PropertyDetail.newInstance(propertyD.propertyaddress, propertyD.propertypurchaseprice, imgList[(0..12).random()], propertyD.id)
+        var propDetail = PropertyDetail.newInstance(propertyD.propertyaddress, propertyD.propertypurchaseprice, imgList[(0..11).random()], propertyD.id)
         (context as LandingActivityL).supportFragmentManager.beginTransaction().replace(R.id.main_frameL, propDetail).addToBackStack(null).commit()
     }
 
@@ -55,6 +58,8 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnInfoWindowClickL
 
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_map, container, false)
+
+        view.map_container.animation = AnimationUtils.loadAnimation(context, R.anim.fate_transistion_anim2)
 
         mapModel = ViewModelProviders.of(landingActivityL).get(MapsViewModel::class.java)
 
@@ -71,6 +76,11 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnInfoWindowClickL
 
         mMap!!.mapType = GoogleMap.MAP_TYPE_HYBRID
 
+        with(mMap){
+            setInfoWindowAdapter(MapInfoWindowAdapter(this@MapFragment))
+            setOnInfoWindowClickListener(this@MapFragment)
+        }
+
         /*
         mMap.setOnInfoWindowClickListener(object : GoogleMap.OnInfoWindowClickListener {
             override fun onInfoWindowClick(p0: Marker) {
@@ -78,7 +88,6 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnInfoWindowClickL
                 var propDetail = PropertyDetail.newInstance(propertyD.propertyaddress, propertyD.propertypurchaseprice, imgList[(0..12).random()], propertyD.id)
                 (context as LandingActivityL).supportFragmentManager.beginTransaction().replace(R.id.main_frameL, propDetail).addToBackStack(null).commit()
             }
-
         })
         */
 
@@ -137,4 +146,3 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnInfoWindowClickL
 
 
 }
-

@@ -201,4 +201,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_prop_add_current"
+        android:text="Add Current Location"
+        app:cornerRadius="10dp"
+        app:backgroundTint="@color/actual_blue"
+        android:textColor="@color/white"
+        android:fontFamily="@font/marko_one"
+        android:textSize="14sp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>

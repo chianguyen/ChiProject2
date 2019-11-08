@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import com.crashlytics.android.Crashlytics
 import com.google.gson.JsonObject
@@ -27,6 +28,8 @@ class ForgotPwdAct : AppCompatActivity() {
         setContentView(R.layout.activity_forgot_pwd)
 
         Fabric.with(this, Crashlytics())
+
+        //  forgot_container.animation = AnimationUtils.loadAnimation(this, R.anim.fate_transistion_anim3)
 
         forgot_btn_forgot.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
@@ -52,10 +55,6 @@ class ForgotPwdAct : AppCompatActivity() {
                 startActivity(i)
             }
         })
-
-        window.decorView.apply {
-            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-        }
 
     }
 
